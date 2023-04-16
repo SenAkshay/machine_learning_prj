@@ -1,0 +1,8 @@
+Agenda:
+1 Create a falsk app [Hello world]
+2 write a docker file for flask app
+3 Create github action for CI/CD
+4 Heroku app for flask deployment
+5 Create structure for ML project
+6 Build Machine Learning pipelines
+
