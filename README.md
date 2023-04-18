@@ -30,7 +30,7 @@ pip install -r requirements.txt
 Heroku Setup
 To setup CI/CD pipeline in heroku we need below 3 items:
 1. HEROKU_EMAIL =  akshayxxxxxx@gmail.com
-2. HEROKU_API_KEY = a1fcbXXX-bcd2-XXXX-84a3-f64fXXXXX
+2. HEROKU_API_KEY = a1fcbXXXgit -bcd2-XXXX-84a3-f64fXXXXX
 3. HEROKU_APP_NAME = ml-prj-app
 
 BUILD Docker Image
