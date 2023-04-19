@@ -76,3 +76,10 @@ To create a fresh docker image from existing image
 ```
 docker commit <new_img_name> <container_id_of_parent>
 ```
+
+
+### To install
+```
+python setup.py install
+
+```
