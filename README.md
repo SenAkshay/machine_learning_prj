@@ -83,3 +83,14 @@ docker commit <new_img_name> <container_id_of_parent>
 python setup.py install
 
 ```
+
+### Install ipynb kernal
+```
+pip install ipykernal
+```
+OR
+
+>for windows
+```
+pip install jupyter
+```
