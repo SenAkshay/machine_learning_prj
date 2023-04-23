@@ -20,7 +20,7 @@ class HousingException(Exception):
         errro_detail: object of sys module
         """
         _,_, exec_tb = error_detail.exc_info()
-        line_number= exec_tb.tb_frame.f_lineno
+        line_number= exec_tb.tb_lineno
         file_name= exec_tb.tb_frame.f_code.co_filename
 
         error_message = f"Unexpected Error in file: [{file_name}] at line number: [{line_number}]"
