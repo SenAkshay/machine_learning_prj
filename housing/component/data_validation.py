@@ -60,7 +60,7 @@ class DataValidation:
             test_df = pd.read_csv(self.data_ingestion_artifact.test_file_path)
             return train_df, test_df
         except Exception as e:
-            raise HousingException(s,sys) from e
+            raise HousingException(e,sys) from e
 
     def validate_dataset_schema(self)-> bool:
         try:
@@ -85,8 +85,10 @@ class DataValidation:
             profile = Profile(sections=DataDriftProfileSection())
             profile.calculate(train_df, test_df)
             report = json.loads(profile.json()) # to dictionary or list instead of string.
+            report_file_path = self.data_validation_config.report_file_path
+            report_dir = os.path.dirname(report_file_path)
 
-            with open(self.data_validation_config.report_file_path,"w") as report_file:
+            with open(report_dir,"w") as report_file:
                 json.dump(report, report_file, indent=6)
             return report
         except Exception as e:
@@ -98,6 +100,10 @@ class DataValidation:
             dashboard = Dashboard(tabs=[DataDriftTab()])
             train_df, test_df  = self.get_train_test_df()
             dashboard.calculate(train_df, test_df)
+            report_page_file_path = self.data_validation_config.report_page_file_path
+            report_page_dir  = os.path.dirname(report_page_file_path)
+            os.makedirs(report_page_dir, exist_ok=True)
+
             dashboard.save(self.data_validation_config.report_file_path)
 
         except Exception as e:
