@@ -5,16 +5,16 @@ from housing.component.data_transformation import DataTransformation
 
 def main():
     try:
-        # pipeline = Pipeline
-        # pipeline.run_pipeline()
+        pipeline = Pipeline
+        pipeline.run_pipeline()
         # data_validation_config = Configuartion().get_data_transformation_config()
         # print(data_validation_config)
-        schema_file_path = r"C:\Users\akssen\Downloads\Akshay_ML\A_Project_ML\machine_learning_prj\config\schema.yaml"
-        file_path= r"C:\Users\akssen\Downloads\Akshay_ML\A_Project_ML\machine_learning_prj\housing.csv"
+        # schema_file_path = r"C:\Users\akssen\Downloads\Akshay_ML\A_Project_ML\machine_learning_prj\config\schema.yaml"
+        # file_path= r"C:\Users\akssen\Downloads\Akshay_ML\A_Project_ML\machine_learning_prj\housing.csv"
 
-        df =DataTransformation.load_data(file_path = file_path, schema_file_path = schema_file_path)
-        print(df.columns)
-        print(df.dtypes)
+        # df =DataTransformation.load_data(file_path = file_path, schema_file_path = schema_file_path)
+        # print(df.columns)
+        # print(df.dtypes)
 
     except Exception as e:
         logging.error(f"{e}")
