@@ -9,6 +9,7 @@ AUTHOR='Akshay Sen'
 DESCRIPTION='My First FSDS Project'
 REQUIREMENTS_FILE_NAME='requirements.txt'
 
+HYPHEN_E_DOT = "-e ."
 
 
 def get_requirements_list()->List[str]:  # func will return list with string
@@ -16,16 +17,21 @@ def get_requirements_list()->List[str]:  # func will return list with string
     Description: This function will return the list of requirements 
     mentioned in requirements.txt file
 
-    return This function will return name of required libraries.
+    return This function is going to return a list which contain name
+    of libraries mentioned in requirements.txt file.
     """
     with open(REQUIREMENTS_FILE_NAME) as requirements_file:
-        return requirements_file.readlines().remove("-e .")
+        requirement_list = requirements_file.readlines()
+        requirement_list = [requirement_name.replace("\n", "") for requirement_name in requirement_list]
+        if HYPHEN_E_DOT in requirement_list:
+            requirement_list.remove(HYPHEN_E_DOT)
+        return requirement_list
 
 
 setup(
 name=PROJECT_NAME,
 version=VERSION,
-author=VERSION,
+author=AUTHOR,
 description=DESCRIPTION,
 packages=find_packages(),
 license='Apache',
