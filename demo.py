@@ -5,7 +5,7 @@ from housing.component.data_transformation import DataTransformation
 
 def main():
     try:
-        pipeline = Pipeline
+        pipeline = Pipeline()
         pipeline.run_pipeline()
         # data_validation_config = Configuartion().get_data_transformation_config()
         # print(data_validation_config)

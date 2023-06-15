@@ -17,7 +17,7 @@ class DataIngestion:
             self.data_ingestion_config = data_ingestion_config
 
         except Exception as e:
-            raise HousingException(e,sys)
+            raise HousingException(e,sys) from e
     
 
     def download_housing_data(self,) -> str:
